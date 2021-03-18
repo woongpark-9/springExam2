@@ -2,6 +2,7 @@ package tommy.spring.web.board.impl;
 
 import java.util.List;
 
+import org.apache.tomcat.util.http.LegacyCookieProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,10 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void insertBoard(BoardVO vo) {
 		// TODO Auto-generated method stub
+//		if(vo.getSeq() == 0) {
+//			
+//		}
+	
 		boardDAO.insertBoard(vo);
 	}
 
@@ -32,6 +37,7 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		boardDAO.deleteBoard(vo);
 	}
+	
 
 	@Override
 	public BoardVO getBoard(BoardVO vo) {
@@ -43,6 +49,12 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		// TODO Auto-generated method stub
 		return boardDAO.getBoardList(vo);
+	}
+
+	@Override
+	public int getNumber() {
+		// TODO Auto-generated method stub
+		return 0; 
 	}
 
 }

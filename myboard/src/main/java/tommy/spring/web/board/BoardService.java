@@ -8,4 +8,5 @@ public interface BoardService {
 	void deleteBoard(BoardVO vo);
 	BoardVO getBoard(BoardVO vo);
 	List<BoardVO> getBoardList(BoardVO vo);
+	int getNumber();
 }

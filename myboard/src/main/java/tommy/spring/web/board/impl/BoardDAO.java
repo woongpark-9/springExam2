@@ -23,7 +23,7 @@ public class BoardDAO {
 			private final String BOARD_DELETE = "delete myboard where seq=?";
 			private final String BOARD_GET = "select * from myboard where seq=?";
 			private final String BOARD_LIST = "select * from myboard order by seq desc"; 
-	
+			
 	public void insertBoard(BoardVO vo) {
 		System.out.println("insertBoard 기능처리");
 		try {
@@ -111,6 +111,7 @@ public class BoardDAO {
 				board.setRegDate(rs.getDate("regdate"));
 				board.setCnt(rs.getInt("cnt"));
 				boardList.add(board);
+				
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -119,5 +120,6 @@ public class BoardDAO {
 		}
 		return boardList;
 	}
+
 
 }
